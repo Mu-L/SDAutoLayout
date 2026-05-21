@@ -51,6 +51,8 @@
     
 //    self.tableView.estimatedRowHeight = 100;
     
+    self.tableView.accessibilityIdentifier = @"demo.5.table";
+    
     [self setupHeaderView];
     
     [self creatModelsWithCount:10];
@@ -88,6 +90,7 @@
     [header addSubview:scrollView];
     
     UILabel *tagLabel = [UILabel new];
+    tagLabel.accessibilityIdentifier = @"demo5.header.dateLabel";
     tagLabel.font = [UIFont systemFontOfSize:13];
     tagLabel.textColor = [UIColor lightGrayColor];
     tagLabel.text = @"更新时间：2016.01.08";

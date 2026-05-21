@@ -33,7 +33,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBar.translucent = NO;
 
     // 设置自定义图片和label位置的button
     [self setupCustomButton];
@@ -49,6 +48,7 @@
 - (void)setupCustomButton
 {
     _centerButton = [UIButton new];
+    _centerButton.accessibilityIdentifier = @"demo2.customButton";
     _centerButton.backgroundColor = [UIColor orangeColor];
     [_centerButton setTitle:@"自定义Button" forState:UIControlStateNormal];
     [_centerButton setImage:[UIImage imageNamed:@"7.jpg"] forState:UIControlStateNormal];
@@ -85,6 +85,8 @@
 - (void)setupAutoWidthViewsWithCount:(NSInteger)count margin:(CGFloat)margin
 {
     _autoWidthViewsContainer = [UIView new];
+    _autoWidthViewsContainer.isAccessibilityElement = YES;
+    _autoWidthViewsContainer.accessibilityIdentifier = @"demo2.autoWidthContainer";
     _autoWidthViewsContainer.backgroundColor = [UIColor greenColor];
     [self.view addSubview:_autoWidthViewsContainer];
     
@@ -112,6 +114,8 @@
 - (void)setupAutoMarginViewsWithCount:(NSInteger)count itemWidth:(CGFloat)itemWidth
 {
     _autoMarginViewsContainer = [UIView new];
+    _autoMarginViewsContainer.isAccessibilityElement = YES;
+    _autoMarginViewsContainer.accessibilityIdentifier = @"demo2.autoMarginContainer";
     _autoMarginViewsContainer.backgroundColor = [UIColor blueColor];
     [self.view addSubview:_autoMarginViewsContainer];
     

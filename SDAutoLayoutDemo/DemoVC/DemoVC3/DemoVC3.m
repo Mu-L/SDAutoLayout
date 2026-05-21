@@ -37,6 +37,8 @@
 {
     [super viewDidLoad];
 
+    self.tableView.accessibilityIdentifier = @"demo.3.table";
+
     _rowCount = (long)10;
     
     NSArray *textArray = @[@"当你的 app 没有提供 3x 的 LaunchImage 时，系统默认进入兼容模式，大屏幕一切按照 320 宽度渲染，屏幕宽度返回 320；然后等比例拉伸到大屏。这种情况下对界面不会产生任何影响，等于把小屏完全拉伸。",

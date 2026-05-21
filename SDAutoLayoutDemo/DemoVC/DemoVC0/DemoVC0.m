@@ -25,6 +25,12 @@
 
 #define kTimeInterval 0.8
 
+/// UI 测试启动参数：DemoVC0 的循环动画会导致 XCUITest 长时间等待 app idle。
+static BOOL SDIsAutoLayoutUITestRunning(void)
+{
+    return [[NSProcessInfo processInfo].arguments containsObject:@"-SDAutoLayoutUITest"];
+}
+
 @implementation DemoVC0
 {
     NSTimer *_timer;
@@ -37,7 +43,9 @@
     
     _widthRatio = 0.4;
     
-    _timer = [NSTimer scheduledTimerWithTimeInterval:kTimeInterval target:self selector:@selector(animation) userInfo:nil repeats:YES];
+    if (!SDIsAutoLayoutUITestRunning()) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:kTimeInterval target:self selector:@selector(animation) userInfo:nil repeats:YES];
+    }
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     

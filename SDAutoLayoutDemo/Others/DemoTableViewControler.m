@@ -53,9 +53,11 @@ NSString * const demo14Description = @"xib的cell高度自适应";
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.title = @"Demo";
+    self.tableView.accessibilityIdentifier = @"demoListTable";
     
-    [self.navigationController pushViewController:[NSClassFromString(@"DemoVC13") new] animated:YES];
+//    [self.navigationController pushViewController:[NSClassFromString(@"DemoVC13") new] animated:YES];
     
     _contenArray = @[demo0Description, demo1Description, demo2Description, demo3Description, demo4Description, demo5Description, demo6Description, demo7Description, demo8Description, demo9Description, demo10Description, demo11Description, demo12Description, demo13Description, demo14Description];
 }
@@ -75,6 +77,8 @@ NSString * const demo14Description = @"xib的cell高度自适应";
         cell = [[DemoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     cell.titleLabel.text = [NSString stringWithFormat:@"Demo -- %ld", (long)indexPath.row];
+    cell.titleLabel.accessibilityIdentifier = [NSString stringWithFormat:@"demoCell.%ld", (long)indexPath.row];
+    cell.accessibilityIdentifier = cell.titleLabel.accessibilityIdentifier;
     cell.contentLabel.text = _contenArray[indexPath.row];
     return cell;
 }
@@ -84,6 +88,10 @@ NSString * const demo14Description = @"xib的cell高度自适应";
     NSString *demoClassString = [NSString stringWithFormat:@"DemoVC%ld", (long)indexPath.row];
     UIViewController *vc = [NSClassFromString(demoClassString) new];
     vc.title = demoClassString;
+    // DemoVC9 朋友圈需延伸到导航栏下；其余 Demo 内容区不与导航栏重叠
+    if (indexPath.row != 9) {
+        vc.edgesForExtendedLayout = UIRectEdgeNone;
+    }
     [self.navigationController pushViewController:vc animated:YES];
 }
 

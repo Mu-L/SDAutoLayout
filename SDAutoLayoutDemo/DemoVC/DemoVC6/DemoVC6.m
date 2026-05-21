@@ -20,6 +20,7 @@
     [super viewDidLoad];
     
     UIScrollView *scrollView = [UIScrollView new];
+    scrollView.accessibilityIdentifier = @"demo.scroll.main";
     [self.view addSubview:scrollView];
     
     [scrollView sd_addSubviews:@[self.view0, self.view1, self.view2, self.view3, self.view4, self.view5, self.view6, self.view7, self.view8]];

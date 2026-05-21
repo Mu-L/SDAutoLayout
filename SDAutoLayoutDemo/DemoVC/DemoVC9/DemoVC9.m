@@ -59,6 +59,8 @@ static CGFloat textFieldH = 40;
 {
     [super viewDidLoad];
     
+    self.tableView.accessibilityIdentifier = @"demo.9.table";
+    
     //LEETheme 分为两种模式 , 默认设置模式 标识符设置模式 , 朋友圈demo展示的是默认设置模式的使用 , 微信聊天demo和Demo10 展示的是标识符模式的使用
     
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"日间" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonItemAction:)];

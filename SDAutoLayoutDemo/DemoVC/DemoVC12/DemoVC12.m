@@ -48,6 +48,7 @@
 - (void)setupScrollView
 {
     UIScrollView *scroll = [UIScrollView new];
+    scroll.accessibilityIdentifier = @"demo.scroll.main";
     [self.view addSubview:scroll];
     _scrollView = scroll;
     
@@ -65,6 +66,8 @@
 - (void)setupFlowItemContentView
 {
     _flowItemContentView = [UIView new];
+    _flowItemContentView.isAccessibilityElement = YES;
+    _flowItemContentView.accessibilityIdentifier = @"demo12.flowContent";
     _flowItemContentView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.4];
     [_scrollView addSubview:_flowItemContentView];
     

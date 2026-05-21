@@ -7,7 +7,7 @@
 //
 
 #import "ThreeModel.h"
-#import "MJExtension.h"
+#import <MJExtension/MJExtension.h>
 @implementation ThreeModel
 
 +(NSDictionary*)mj_objectClassInArray{

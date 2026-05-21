@@ -59,9 +59,12 @@
     UILabel *subview1 = [UILabel new]; // 初始化子view1
     subview1.text = @"这个紫色的label会根据这些文字内容高度自适应；而这个灰色的父view会根据紫色的label和橙色的view具体情况实现高度自适应。\nGot it! OH YAEH!";
     subview1.backgroundColor = [UIColor purpleColor];
+    subview1.accessibilityIdentifier = @"demo1.purpleLabel";
     
     UIView *subview2 = [UIView new];    // 初始化子view2
     subview2.backgroundColor = [UIColor orangeColor];
+    subview2.isAccessibilityElement = YES;
+    subview2.accessibilityIdentifier = @"demo1.orangeBar";
     
     // 将子view添加进父view
     [self.view1 sd_addSubviews:@[subview1, subview2]];
@@ -96,6 +99,7 @@
 {
     UILabel *autoWidthlabel = [UILabel new];
     autoWidthlabel.backgroundColor = [[UIColor orangeColor] colorWithAlphaComponent:0.5];
+    autoWidthlabel.accessibilityIdentifier = @"demo1.autoWidthLabel";
     _autoWidthLabel = autoWidthlabel;
     autoWidthlabel.font = [UIFont systemFontOfSize:12];
     autoWidthlabel.text = @"宽度自适应(距离父view右边距10)";
@@ -116,6 +120,7 @@
 {
     UILabel *autoHeightlabel = [UILabel new];
     autoHeightlabel.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
+    autoHeightlabel.accessibilityIdentifier = @"demo1.autoHeightLabel";
     autoHeightlabel.font = [UIFont systemFontOfSize:12];
     autoHeightlabel.text = @"高度自适应(距离父view左边距10，底部和其右侧label相同，宽度为100)";
     
@@ -134,6 +139,7 @@
 {
     UIButton *btn = [UIButton new];
     btn.backgroundColor = [UIColor redColor];
+    btn.accessibilityIdentifier = @"demo1.autoSizeButton";
     [btn setTitle:@"button根据文字自适应" forState:UIControlStateNormal];
     [self.view addSubview:btn];
     

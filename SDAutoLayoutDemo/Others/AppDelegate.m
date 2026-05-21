@@ -35,9 +35,49 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [self configureNavigationBarAppearance];
     [self configTheme];
     
     return YES;
+}
+
+/// iOS 15+ 默认导航栏在滚动边缘会变成深色；统一为浅色栏 + 深色标题，并与内容区对齐。
+- (void)configureNavigationBarAppearance
+{
+    UIColor *barColor = [UIColor colorWithRed:0.973 green:0.973 blue:0.973 alpha:1];
+    UIColor *titleColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1];
+    UIColor *tintColor = [UIColor colorWithRed:0 green:0.478 blue:1 alpha:1];
+
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+        [appearance configureWithOpaqueBackground];
+        appearance.backgroundColor = barColor;
+        appearance.titleTextAttributes = @{NSForegroundColorAttributeName: titleColor};
+        appearance.largeTitleTextAttributes = @{NSForegroundColorAttributeName: titleColor};
+        appearance.shadowColor = [UIColor colorWithWhite:0 alpha:0.12];
+
+        UINavigationBar *navBar = [UINavigationBar appearance];
+        navBar.standardAppearance = appearance;
+        navBar.scrollEdgeAppearance = appearance;
+        navBar.compactAppearance = appearance;
+        if (@available(iOS 15.0, *)) {
+            navBar.compactScrollEdgeAppearance = appearance;
+        }
+        navBar.tintColor = tintColor;
+        navBar.translucent = NO;
+        navBar.barTintColor = barColor;
+        navBar.titleTextAttributes = appearance.titleTextAttributes;
+        if (@available(iOS 13.0, *)) {
+            navBar.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+        }
+    } else {
+        UINavigationBar *navBar = [UINavigationBar appearance];
+        navBar.barTintColor = barColor;
+        navBar.titleTextAttributes = @{NSForegroundColorAttributeName: titleColor};
+        navBar.tintColor = tintColor;
+        navBar.translucent = NO;
+        navBar.barStyle = UIBarStyleDefault;
+    }
 }
 
 // 设置LEETheme

@@ -1,3 +1,38 @@
-PODFILE CHECKSUM: 46e785b402b99f4d49966592312ee6dead3bfd66
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - MJExtension (3.4.1)
+  - MJRefresh (3.7.6)
 
-COCOAPODS: 1.8.4
+DEPENDENCIES:
+  - AFNetworking (~> 4.0)
+  - MJExtension
+  - MJRefresh
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - MJExtension
+    - MJRefresh
+
+SPEC CHECKSUMS:
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
+  MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
+
+PODFILE CHECKSUM: a62c39409cf3d1c88cf89df3813bc94ce4fb7c02
+
+COCOAPODS: 1.16.2

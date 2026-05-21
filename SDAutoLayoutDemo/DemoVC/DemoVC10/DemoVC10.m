@@ -14,9 +14,9 @@
 #import "DemoVC10.h"
 
 #import "UITableView+SDAutoTableViewCellHeight.h"
-#import "AFNetworking.h"
-#import "MJRefresh.h"
-#import "MJExtension.h"
+#import <AFNetworking/AFNetworking.h>
+#import <MJRefresh/MJRefresh.h>
+#import <MJExtension/MJExtension.h>
 #import "XYString.h"
 
 #import "ThreeBaseCell.h"
@@ -104,6 +104,7 @@
     if (!_tv) {
         
         _tv = [[UITableView alloc] initWithFrame:self.view.bounds];
+        _tv.accessibilityIdentifier = @"demoVC10TableView";
         _tv.separatorColor = [UIColor clearColor];
         _tv.delegate = self;
         _tv.dataSource = self;
@@ -151,12 +152,17 @@
      */
     NSString * urlString = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/%@/%ld-20.html",@"headline/T1348647853363",self.page];
     NSLog(@"______%@",urlString);
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSDictionary *dict = [XYString getObjectFromJsonString:operation.responseString];
+    [manager GET:urlString parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *responseString = nil;
+        if ([responseObject isKindOfClass:[NSData class]]) {
+            responseString = [[NSString alloc] initWithData:(NSData *)responseObject encoding:NSUTF8StringEncoding];
+        } else if ([responseObject isKindOfClass:[NSString class]]) {
+            responseString = responseObject;
+        }
+        NSDictionary *dict = [XYString getObjectFromJsonString:responseString];
         //..keyEnumerator 获取字典里面所有键  objectEnumerator得到里面的对象  keyEnumerator得到里面的键值
         NSString *key = [dict.keyEnumerator nextObject];//.取键值
         NSArray *temArray = dict[key];
@@ -177,7 +183,7 @@
         [self doneWithView:self.myRefreshView];
         
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         NSLog(@"请求失败");
         [self->_myRefreshView endRefreshing];

@@ -41,6 +41,7 @@
     
     
     UILabel *label = [UILabel new];
+    label.accessibilityIdentifier = @"demo4.attributedLabel";
     [self.view addSubview:label];
     _label = label;
     [self setupAttributedStringForTestLabel];
@@ -48,13 +49,14 @@
     label.sd_layout
     .leftSpaceToView(self.view, 10)
     .rightSpaceToView(self.view, 10)
-    .topSpaceToView(self.view, 70)
+    .topSpaceToView(self.view, 0)
     .autoHeightRatio(0);
     
     // 标注lable的text为attributedString
     label.isAttributedContent = YES;
     
     UIButton *button = [UIButton new];
+    button.accessibilityIdentifier = @"demo4.refreshButton";
     [button setTitle:@"点我随机刷新文字" forState:UIControlStateNormal];
     button.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.8];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

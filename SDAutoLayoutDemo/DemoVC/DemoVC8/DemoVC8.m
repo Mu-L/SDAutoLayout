@@ -35,6 +35,8 @@
     
 //    self.tableView.estimatedRowHeight = 100;
     
+    self.tableView.accessibilityIdentifier = @"demo.8.table";
+    
     [self creatModelsWithCount:18];
     
     [self.tableView registerClass:[DemoVC7Cell class] forCellReuseIdentifier:NSStringFromClass([DemoVC7Cell class])];

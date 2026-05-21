@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "15554BD4-9120-47BC-8667-115DE7D692B0"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
+            uuid = "CAC2F883-026F-434B-9040-6EAF05BA882E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -16,6 +18,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "40F7BE73-57DC-435A-9952-B327FEC0A1C3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -32,6 +35,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "FDAADD3F-82B8-49B7-984B-C89BAB53C6B0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -48,6 +52,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "597E52C9-3624-43AE-83E6-5D7C98D0C5A3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -64,6 +69,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "BED986E2-167D-4355-8D86-EAFF8E32A81D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -75,38 +81,6 @@
             endingLineNumber = "131"
             landmarkName = "-marginToViewblockWithKey:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[SDAutoLayoutModel marginToViewblockWithKey:]"
-                  moduleName = "SDAutoLayoutDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gsd/Desktop/%E5%BC%80%E6%BA%90/SDAutoLayout/SDAutoLayoutDemo/SDAutoLayout/UIView+SDAutoLayout.m"
-                  timestampString = "488971328.597476"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__46-[SDAutoLayoutModel marginToViewblockWithKey:]_block_invoke"
-                  moduleName = "SDAutoLayoutDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gsd/Desktop/%E5%BC%80%E6%BA%90/SDAutoLayout/SDAutoLayoutDemo/SDAutoLayout/UIView+SDAutoLayout.m"
-                  timestampString = "488971328.597627"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

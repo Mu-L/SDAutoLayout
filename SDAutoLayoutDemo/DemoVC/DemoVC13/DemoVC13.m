@@ -59,6 +59,8 @@ static const CGFloat maxImageViewWidth = 200.f;
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.wrapperView = [UIView new];
+    self.wrapperView.isAccessibilityElement = YES;
+    self.wrapperView.accessibilityIdentifier = @"demo13.scrollContent";
     [self.scroollView addSubview:self.wrapperView];
     [self.scroollView setupAutoContentSizeWithBottomView:self.wrapperView bottomMargin:0];
     
@@ -85,6 +87,7 @@ static const CGFloat maxImageViewWidth = 200.f;
 {
     if (!_scroollView) {
         _scroollView = [UIScrollView new];
+        _scroollView.accessibilityIdentifier = @"demo.scroll.main";
         _scroollView.delegate = self;
         [self.view addSubview:_scroollView];
         

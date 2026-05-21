@@ -1,0 +1,23 @@
+{
+  "headline/T1348647853363": [
+    {
+      "title": "测试新闻标题",
+      "digest": "测试摘要",
+      "ptime": "2020-01-01 12:00:00",
+      "docid": "TEST001",
+      "imgsrc": "http://example.com/a.jpg",
+      "hasHead": 0,
+      "imgType": 0
+    },
+    {
+      "title": "多图新闻",
+      "digest": "摘要",
+      "ptime": "2020-01-02 08:00:00",
+      "docid": "TEST002",
+      "imgextra": [
+        { "imgsrc": "http://example.com/1.jpg" },
+        { "imgsrc": "http://example.com/2.jpg" }
+      ]
+    }
+  ]
+}

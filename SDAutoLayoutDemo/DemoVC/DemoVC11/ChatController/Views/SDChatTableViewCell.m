@@ -82,7 +82,7 @@
     _container = [UIView new];
     [self.contentView addSubview:_container];
     
-    _label = [MLEmojiLabel new];
+    _label = [[MLEmojiLabel alloc] initWithFrame:CGRectZero];
     _label.delegate = self;
     _label.font = [UIFont systemFontOfSize:16.0f];
     _label.numberOfLines = 0;

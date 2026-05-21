@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.accessibilityIdentifier = @"demo.14.table";
+    
     [self creatModelsWithCount:20];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"DemoVC14Cell" bundle:nil] forCellReuseIdentifier:@"DemoVC14Cell"];
